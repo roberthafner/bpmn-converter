@@ -2,8 +2,8 @@ package converter
 
 import (
         "github.com/roberthafner/bpmn-model"
-	"github.com/roberthafner/bpmn-converter/converter/parser"
-	"github.com/roberthafner/bpmn-converter/converter/parser/handler"
+	"github.com/roberthafner/bpmn-converter/parser"
+	"github.com/roberthafner/bpmn-converter/parser/handler"
 	"encoding/xml"
 	"fmt"
 	"io"

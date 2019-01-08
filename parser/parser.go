@@ -3,7 +3,6 @@ package parser
 import (
         "github.com/roberthafner/bpmn-model"
 	"encoding/xml"
-	"model"
 )
 
 type Parser interface {

@@ -1,7 +1,6 @@
 package converter
 
 import (
-        "github.com/roberthafner/bpmn-model"
 	"strings"
 	"testing"
 )

@@ -55,9 +55,8 @@ func (converter BpmnXMLConverter) ConvertToBpmnModel(reader io.Reader) model.Bpm
 		}
 	}
 
-	processes := bpmnModel.Processes()
-	for i := 0; i < len(processes); i++ {
-		process := processes[i]
+	for i := 0; i < len(bpmnModel.Processes); i++ {
+		process := bpmnModel.Processes[i]
 		flowElements := process.FlowElements
 		for j := 0; j < len(flowElements); j++ {
 			flowElement := flowElements[j]

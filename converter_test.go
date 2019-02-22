@@ -20,7 +20,7 @@ func TestConverter(t *testing.T) {
 	converter := NewBpmnXmlConverter()
 	bpmnModel := converter.ConvertToBpmnModel(strings.NewReader(definition))
 
-	processes := bpmnModel.Processes()
+	processes := bpmnModel.Processes
 	if 1 != len(processes) {
 		t.Fail()
 	}

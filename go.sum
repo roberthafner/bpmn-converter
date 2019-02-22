@@ -1,2 +1,6 @@
 github.com/roberthafner/bpmn-model v0.0.0-20190108130755-6b47457c3951 h1:GQNa3gzxxp1gvBtUiUQQydMjN9DWBgnQ5F4+hZnZMMI=
 github.com/roberthafner/bpmn-model v0.0.0-20190108130755-6b47457c3951/go.mod h1:UlzhBmHHm05OPahoUOGGepnp0pdbpxqAQkE1TBeXLmQ=
+github.com/roberthafner/bpmn-model v0.0.0-20190222174753-d23640a8971b h1:SGr/XbrqqsXjuMrzK7kOcvXwfh+eH3Qg0Yj78M7Oe5Q=
+github.com/roberthafner/bpmn-model v0.0.0-20190222174753-d23640a8971b/go.mod h1:UlzhBmHHm05OPahoUOGGepnp0pdbpxqAQkE1TBeXLmQ=
+github.com/roberthafner/bpmn-model v0.0.0-20190222181545-d1f0ae3eade0 h1:As3gZf/JWbAfkY9ZSt2nFAYEXK8YnE3Rd4Kp3R3vc3s=
+github.com/roberthafner/bpmn-model v0.0.0-20190222181545-d1f0ae3eade0/go.mod h1:UlzhBmHHm05OPahoUOGGepnp0pdbpxqAQkE1TBeXLmQ=

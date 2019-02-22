@@ -17,8 +17,8 @@ func (parser ProcessParser) Parse (token xml.Token, decoder xml.Decoder, bpmnMod
 	processElement := token.(xml.StartElement)
 	attributeMap := readAttributes(processElement.Attr)
 	// TODO: parse process documentation.
-	process := model.NewProcess(attributeMap[model.AttributeId], attributeMap[model.AttributeName], nil)
-	bpmnModel = bpmnModel.Add(process)
+	process := model.NewProcess(attributeMap[model.AttributeId], attributeMap[model.AttributeName], attributeMap[model.ElementDocumentation])
+	bpmnModel.Add(process)
 	return bpmnModel
 }
 
@@ -31,11 +31,11 @@ func (parser SequenceFlowParser) Parse (token xml.Token, decoder xml.Decoder, bp
 	attributeMap := readAttributes(sequenceFlowElement.Attr)
 
 	sequenceFlow := model.NewSequenceFlow(attributeMap[model.AttributeId], attributeMap[model.AttributeName],
-		nil, attributeMap[model.AttributeSourceRef], attributeMap[model.AttributeTargetRef])
+		attributeMap[model.ElementDocumentation], attributeMap[model.AttributeSourceRef], attributeMap[model.AttributeTargetRef])
 
 	process := bpmnModel.CurrentProcess()
-	process = process.Add(sequenceFlow)
-	bpmnModel.SetCurrentProcess(process)
+	process.Add(sequenceFlow)
+	//bpmnModel.SetCurrentProcess(process)
 	return bpmnModel
 }
 
@@ -47,10 +47,10 @@ func (parser StartEventParser) Parse (token xml.Token, decoder xml.Decoder, bpmn
 	startEventElement := token.(xml.StartElement)
 	attributeMap := readAttributes(startEventElement.Attr)
 
-	startEvent := model.NewStartEvent(attributeMap[model.AttributeId], attributeMap[model.AttributeName], nil)
+	startEvent := model.NewStartEvent(attributeMap[model.AttributeId], attributeMap[model.AttributeName], attributeMap[model.ElementDocumentation])
 	process := bpmnModel.CurrentProcess()
-	process = process.Add(startEvent)
-	bpmnModel.SetCurrentProcess(process)
+	process.Add(startEvent)
+	//bpmnModel.SetCurrentProcess(process)
 	return bpmnModel
 }
 
@@ -62,10 +62,10 @@ func (parser UserTaskParser) Parse (token xml.Token, decoder xml.Decoder, bpmnMo
 	userTaskElement := token.(xml.StartElement)
 	attributeMap := readAttributes(userTaskElement.Attr)
 
-	userTask := model.NewUserTask(attributeMap[model.AttributeId], attributeMap[model.AttributeName], nil)
+	userTask := model.NewUserTask(attributeMap[model.AttributeId], attributeMap[model.AttributeName], attributeMap[model.ElementDocumentation])
 	process := bpmnModel.CurrentProcess()
-	process = process.Add(userTask)
-	bpmnModel.SetCurrentProcess(process)
+	process.Add(userTask)
+	//bpmnModel.SetCurrentProcess(process)
 	return bpmnModel
 }
 
@@ -77,10 +77,10 @@ func (parser EndEventParser) Parse (token xml.Token, decoder xml.Decoder, bpmnMo
 	endEventElement := token.(xml.StartElement)
 	attributeMap := readAttributes(endEventElement.Attr)
 
-	endEvent := model.NewEndEvent(attributeMap[model.AttributeId], attributeMap[model.AttributeName], nil)
+	endEvent := model.NewEndEvent(attributeMap[model.AttributeId], attributeMap[model.AttributeName], attributeMap[model.ElementDocumentation])
 	process := bpmnModel.CurrentProcess()
-	process = process.Add(endEvent)
-	bpmnModel.SetCurrentProcess(process)
+	process.Add(endEvent)
+	//bpmnModel.SetCurrentProcess(process)
 	return bpmnModel
 }
 
